@@ -1,0 +1,215 @@
+ @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+*, p, span, h3 {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.5rem;
+}
+
+h3 {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  line-height: 2rem;
+}
+
+div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+body {
+  background-color: #d2aa60;
+}
+
+/* .box {
+  padding: 50px;
+  width: 50%;
+  height: 100%;
+} */
+
+
+#primary_button, #background_button {   
+    width: 100px;
+    height: 100px;
+    background-color: #d2aa60;
+    border-radius: 25%;
+    /* border: 1px solid; */
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3), -25px -25px 50px rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    position: relative;
+    top: 25%;
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+    /* left: 25%;
+    -ms-transform: translateX(-25%);
+    transform: translateX(-25%); */
+    display: inline-block;
+}
+
+#primary_button {
+  background-color: #ffeac2;
+}
+
+/* tab */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  /* border: 1px solid #ccc; */
+  border-top: none;
+}
+
+/* slider control */
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;  
+    background: rgba(255, 255, 255, 0.5);
+    outline: none;
+    opacity: 0.5;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+/* color picker */
+#primary_color, #background_color{
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+  border: 1px solid white;
+  outline: none;1
+  -webkit-appearance: none;
+  padding: 0;
+}
+
+#primary_color:hover, #background_color:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+#primary_color::-webkit-color-swatch-wrapper, #background_color::-webkit-color-swatch-wrapper {
+  padding: 0;	
+}
+#primary_color::-webkit-color-swatch, #background_color::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.switchSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switchSlider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .switchSlider {
+  background-color: #2196F3;
+}
+
+input:focus + .switchSlider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .switchSlider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switchSlider.round {
+  border-radius: 34px;
+}
+
+.switchSlider.round:before {
+  border-radius: 50%;
+}
+
+/* shape button */
+.shapeClicked {
+  background-color: rgba(255, 255, 255, 0.3);
+}
