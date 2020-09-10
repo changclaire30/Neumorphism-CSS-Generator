@@ -1,6 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
-*, p, span, h3 {
+*, p, span, h3, code {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.5rem;
 }
@@ -17,20 +17,31 @@ div {
 }
 
 body {
-  background-color: #d2aa60;
+  background-color: #b69c6d;
 }
 
-/* .box {
-  padding: 50px;
-  width: 50%;
-  height: 100%;
-} */
+.box {
+  /* padding: 50px; */
+  width: 40vw;
+  height: 60vh;
+}
+
+.codeBox {
+  width: 40vw;
+  height: auto;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+
+  color: white;
+}
 
 
 #primary_button, #background_button {   
     width: 100px;
     height: 100px;
-    background-color: #d2aa60;
+    background-color: #b69c6d;
     border-radius: 25%;
     /* border: 1px solid; */
     box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3), -25px -25px 50px rgba(255, 255, 255, 0.3);

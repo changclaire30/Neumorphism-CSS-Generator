@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Neumorphism/Soft UI CSS Generator</title>
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="bootstrap-grid.css">
     <link rel="stylesheet" href="index.css">
@@ -11,8 +15,30 @@
     <div class="row">
 
     <div class="col-7">
-        <div id="primary_button" class="myDIV"></div>
-        <div id="background_button" class="myDIV"></div>
+        <div class="box">
+            <div id="primary_button" class="myDIV"></div>
+            <div id="background_button" class="myDIV"></div>
+        </div>
+        <div class="codeBox">
+            <button type="button" style="float: right;" id="copy">COPY</button>
+            <code id="copyText">
+                .primary-button {<br/>
+                    <span id="codeBackgroundColorPrimary">background-color: #ffeac2</span>;<br/>
+                    width: <span id="codeWidthPrimary">100</span>px;<br/>
+                    height: <span id="codeHeightPrimary">100</span>px;<br/>
+                    border-radius: <span id="codeBorderRadiusPrimary">25</span>%;<br/>
+                    box-shadow: <span id="codeBoxShadowPrimary">25px 25px 50px rgba(0, 0, 0, 0.3), -25px -25px 50px rgba(255, 255, 255, 0.3)</span>;<br/>
+                }<br/><br/>
+                .background-button {<br/>
+                    <span id="codeBackgroundColor">background-color: #d2aa60</span>;<br/>
+                    width: <span id="codeWidth">100</span>px;<br/>
+                    height: <span id="codeHeight">100</span>px;<br/>
+                    border-radius: <span id="codeBorderRadius">25</span>%;<br/>
+                    box-shadow: <span id="codeBoxShadow">25px 25px 50px rgba(0, 0, 0, 0.3), -25px -25px 50px rgba(255, 255, 255, 0.3)</span>;<br/>
+                }
+            </code>
+        </div>
+        
     </div>
 
 
@@ -37,43 +63,8 @@
     <div id="changeBorderRadius">
         <p>Border Radius</p>
         <div class="slidecontainer">
-            <input type="range" min="1" max="50" value="25" class="slider" id="borderRadiusRange">
+            <input type="range" min="0" max="50" value="25" class="slider" id="borderRadiusRange">
             <span id="borderRadiusNumber">0</span><span>%</span>
-        </div>
-    </div>
-
-    <!-- background -->
-    <h3>Background Button</h3>
-    <div>
-        <p>Background Color</p>
-        <span class="container" id="background_val" style="line-height: 30px;">#d2aa60</span>
-        <input type="color" id="background_color" class="field-radio" value="#d2aa60">
-    </div>
-
-    <!-- shadow -->
-    <p>Shape</p>
-    <span>
-        <button type="button" id="changeDrop" class="shapeClicked">Dropshadow</button>
-        <button type="button" id="changeInner">Inner-shadow</button>
-        <button type="button" id="changeConvex">Convex</button>
-        <button type="button" id="changeConcave">Concave</button>
-    </span>
-    
-    <!-- distance -->
-    <div id="changeDistance">
-        <p>Distance</p>
-        <div class="slidecontainer">
-            <input type="range" min="5" max="50" value="25" class="slider" id="distanceRange">
-            <span id="distanceNumber">0</span><span>px</span>
-        </div>
-    </div>
-
-    <!-- blur -->
-    <div id="changeBlur">
-        <p>Blur</p>
-        <div class="slidecontainer">
-            <input type="range" min="0" max="100" value="50" class="slider" id="blurRange">
-            <span id="blurNumber">0</span><span>px</span>
         </div>
     </div>
 
@@ -81,7 +72,7 @@
     <h3>Primary Button</h3>
     <div>
         <p>Primary Color</p>
-        <span class="container" id="primary_val" style="line-height: 30px;">#ffeac2</span>
+        <!-- <span class="container" id="primary_val" style="line-height: 30px;">#ffeac2</span> -->
         <input type="color" id="primary_color" class="field-radio" value="#ffeac2">
     </div>
 
@@ -98,7 +89,7 @@
     <div id="changeDistance">
         <p>Distance</p>
         <div class="slidecontainer">
-            <input type="range" min="5" max="50" value="25" class="slider" id="distanceRangePrimary">
+            <input type="range" min="0" max="50" value="25" class="slider" id="distanceRangePrimary">
             <span id="distanceNumberPrimary">0</span><span>px</span>
         </div>
     </div>
@@ -109,6 +100,41 @@
         <div class="slidecontainer">
             <input type="range" min="0" max="100" value="50" class="slider" id="blurRangePrimary">
             <span id="blurNumberPrimary">0</span><span>px</span>
+        </div>
+    </div>
+
+    <!-- background -->
+    <h3>Background Button</h3>
+    <div>
+        <p>Background Color</p>
+        <!-- <span class="container" id="background_val" style="line-height: 30px;">#d2aa60</span> -->
+        <input type="color" id="background_color" class="field-radio" value="#b69c6d">
+    </div>
+
+    <!-- shadow -->
+    <p>Shape</p>
+    <span>
+        <button type="button" id="changeDrop" class="shapeClicked">Dropshadow</button>
+        <button type="button" id="changeInner">Inner-shadow</button>
+        <button type="button" id="changeConvex">Convex</button>
+        <button type="button" id="changeConcave">Concave</button>
+    </span>
+    
+    <!-- distance -->
+    <div id="changeDistance">
+        <p>Distance</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="50" value="25" class="slider" id="distanceRange">
+            <span id="distanceNumber">0</span><span>px</span>
+        </div>
+    </div>
+
+    <!-- blur -->
+    <div id="changeBlur">
+        <p>Blur</p>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="100" value="50" class="slider" id="blurRange">
+            <span id="blurNumber">0</span><span>px</span>
         </div>
     </div>
     

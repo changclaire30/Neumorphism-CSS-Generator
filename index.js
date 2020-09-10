@@ -76,7 +76,7 @@ function contrast(rgb1, rgb2) {
 var background_color = document.getElementById("background_color");
 var background_val = document.getElementById("background_val");
 background_color.oninput = function() {
-    background_val.innerHTML = background_color.value;
+    // background_val.innerHTML = background_color.value;
     // colorDiv.style.color = colorButton.value;
     document.getElementsByClassName("myDIV")[1].style.backgroundColor = this.value;
     document.body.style.backgroundColor = this.value;
@@ -88,6 +88,14 @@ background_color.oninput = function() {
         document.body.style.color = "#000000";
     }
     updateShape("changeConvex", "changeConcave", background_color, 1);
+
+    if (document.getElementById("changeConvex").classList.contains("shapeClicked") == true) {
+        updateCode("codeBackgroundColor", "background-image: " + createGradient("135deg", LightenDarkenColor(background_color.value, 20), background_color.value, LightenDarkenColor(background_color.value, -20)));
+    } else if (document.getElementById("changeConcave").classList.contains("shapeClicked") == true) {
+        updateCode("codeBackgroundColor", "background-image: " + createGradient("-45deg", LightenDarkenColor(background_color.value, 20), background_color.value, LightenDarkenColor(background_color.value, -20)));
+    } else {
+        updateCode("codeBackgroundColor", "background-color: " + this.value);
+    }
 }
 
 function updateShape(checkConvex, checkConcave, buttonColor, number) {
@@ -112,9 +120,17 @@ function updateShape(checkConvex, checkConcave, buttonColor, number) {
 var primary_color = document.getElementById("primary_color");
 var primary_val = document.getElementById("primary_val");
 primary_color.oninput = function() {
-    primary_val.innerHTML = primary_color.value;
+    // primary_val.innerHTML = primary_color.value;
     document.getElementsByClassName("myDIV")[0].style.backgroundColor = this.value;
     updateShape("changeConvexPrimary", "changeConcavePrimary", primary_color, 0);
+
+    if (document.getElementById("changeConvexPrimary").classList.contains("shapeClicked") == true) {
+        updateCode("codeBackgroundColorPrimary", "background-image: " + createGradient("135deg", LightenDarkenColor(primary_color.value, 20), primary_color.value, LightenDarkenColor(primary_color.value, -20)));
+    } else if (document.getElementById("changeConcavePrimary").classList.contains("shapeClicked") == true) {
+        updateCode("codeBackgroundColorPrimary", "background-image: " + createGradient("-45deg", LightenDarkenColor(primary_color.value, 20), primary_color.value, LightenDarkenColor(primary_color.value, -20)));
+    } else {
+        updateCode("codeBackgroundColorPrimary", "background-color: " + this.value);
+    }
 }
 
 // Size
@@ -128,6 +144,10 @@ sizeRange.oninput = function() {
     document.getElementsByClassName("myDIV")[0].style.height = this.value + "px";
     document.getElementsByClassName("myDIV")[1].style.width = this.value + "px";
     document.getElementsByClassName("myDIV")[1].style.height = this.value + "px";
+    updateCode("codeWidthPrimary", this.value);
+    updateCode("codeHeightPrimary", this.value);
+    updateCode("codeWidth", this.value);
+    updateCode("codeHeight", this.value);
 }
 
 // Border Radius
@@ -140,6 +160,8 @@ borderRadiusRange.oninput = function() {
     borderRadiusNumber.innerHTML = this.value;
     document.getElementsByClassName("myDIV")[0].style.borderRadius = this.value + "%";
     document.getElementsByClassName("myDIV")[1].style.borderRadius = this.value + "%";
+    updateCode("codeBorderRadius", this.value);
+    updateCode("codeBorderRadiusPrimary", this.value);
 }
 
 // drop - inner - convex - concave
@@ -156,6 +178,9 @@ changeDrop.onclick = function () {
             createBoxShadow("", distanceRange.value, blurRange.value);
     
     document.getElementsByClassName("myDIV")[1].style.backgroundImage = "none";
+    
+    updateCode("codeBoxShadow", createBoxShadow("", distanceRange.value, blurRange.value));
+    updateCode("codeBackgroundColor", "background-color: " + background_color.value);
 }
 changeInner.onclick = function () {
     shape.forEach(removeClicked);
@@ -165,6 +190,9 @@ changeInner.onclick = function () {
             createBoxShadow("inset ", distanceRange.value, blurRange.value);
     
     document.getElementsByClassName("myDIV")[1].style.backgroundImage = "none";
+
+    updateCode("codeBoxShadow", createBoxShadow("inset ", distanceRange.value, blurRange.value));
+    updateCode("codeBackgroundColor", "background-color: " + background_color.value);
 }
 changeConvex.onclick = function () {
     shape.forEach(removeClicked);
@@ -175,6 +203,9 @@ changeConvex.onclick = function () {
 
     document.getElementsByClassName("myDIV")[1].style.boxShadow = 
             createBoxShadow("", distanceRange.value, blurRange.value);
+    
+    updateCode("codeBoxShadow", createBoxShadow("", distanceRange.value, blurRange.value));
+    updateCode("codeBackgroundColor", "background-image: " + gradient);
 }
 changeConcave.onclick = function () {
     shape.forEach(removeClicked);
@@ -185,6 +216,9 @@ changeConcave.onclick = function () {
 
     document.getElementsByClassName("myDIV")[1].style.boxShadow = 
             createBoxShadow("", distanceRange.value, blurRange.value);
+
+    updateCode("codeBoxShadow", createBoxShadow("", distanceRange.value, blurRange.value));
+    updateCode("codeBackgroundColor", "background-image: " + gradient);
 }
 
 // add clicked style
@@ -265,6 +299,12 @@ distanceRange.oninput = function() {
     // document.getElementById("myDIV").style.boxShadow = 
     // this.value + "px " + this.value + "px " + this.value * 2 + "px " + "rgba(0, 0, 0, 0.3), " +
     // "-" + this.value + "px " + "-" + this.value + "px " + this.value * 2 + "px " + "rgba(255, 255, 255, 0.3)" ;
+
+    if (document.getElementById("changeInner").classList.contains("shapeClicked") == true) {
+        updateCode("codeBoxShadow", createBoxShadow("inset ", distanceRange.value, blurRange.value));
+    } else {
+        updateCode("codeBoxShadow", createBoxShadow("", distanceRange.value, blurRange.value));
+    }
 }
 
 blurRange.oninput = function() {
@@ -273,6 +313,12 @@ blurRange.oninput = function() {
     // document.getElementById("myDIV").style.boxShadow = 
     // distanceRange.value + "px " + distanceRange.value + "px " + this.value + "px " + "rgba(0, 0, 0, 0.3), " +
     // "-" + distanceRange.value + "px " + "-" + distanceRange.value + "px " + this.value + "px " + "rgba(255, 255, 255, 0.3)" ;
+
+    if (document.getElementById("changeInner").classList.contains("shapeClicked") == true) {
+        updateCode("codeBoxShadow", createBoxShadow("inset ", distanceRange.value, blurRange.value));
+    } else {
+        updateCode("codeBoxShadow", createBoxShadow("", distanceRange.value, blurRange.value));
+    }
 }
 
 // Primary button
@@ -291,6 +337,9 @@ changeDropPrimary.onclick = function () {
             createBoxShadow("", distanceRange.value, blurRange.value);
     
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = "none";
+
+    updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
+    updateCode("codeBackgroundColorPrimary", "background-color: " + primary_color.value);
 }
 changeInnerPrimary.onclick = function () {
     shapePrimary.forEach(removeClicked);
@@ -300,6 +349,9 @@ changeInnerPrimary.onclick = function () {
             createBoxShadow("inset ", distanceRange.value, blurRange.value);
     
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = "none";
+
+    updateCode("codeBoxShadowPrimary", createBoxShadow("inset ", distanceRangePrimary.value, blurRangePrimary.value));
+    updateCode("codeBackgroundColorPrimary", "background-color: " + primary_color.value);
 }
 changeConvexPrimary.onclick = function () {
     shapePrimary.forEach(removeClicked);
@@ -310,6 +362,9 @@ changeConvexPrimary.onclick = function () {
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
             createBoxShadow("", distanceRange.value, blurRange.value);
+
+    updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
+    updateCode("codeBackgroundColorPrimary", "background-image: " + gradient);
 }
 changeConcavePrimary.onclick = function () {
     shapePrimary.forEach(removeClicked);
@@ -320,6 +375,9 @@ changeConcavePrimary.onclick = function () {
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
             createBoxShadow("", distanceRange.value, blurRange.value);
+
+    updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
+    updateCode("codeBackgroundColorPrimary", "background-image: " + gradient);
 }
 
 // Distance
@@ -336,9 +394,39 @@ distanceRangePrimary.oninput = function() {
     blurRangePrimary.value = this.value * 2;
     blurNumberPrimary.innerHTML = this.value * 2;
     setShadow("changeInnerPrimary", 0, distanceRangePrimary, blurRangePrimary);
+
+    if (document.getElementById("changeInnerPrimary").classList.contains("shapeClicked") == true) {
+        updateCode("codeBoxShadowPrimary", createBoxShadow("inset ", distanceRangePrimary.value, blurRangePrimary.value));
+    } else {
+        updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
+    }
 }
 
 blurRangePrimary.oninput = function() {
     blurNumberPrimary.innerHTML = this.value;
     setShadow("changeInnerPrimary", 0, distanceRangePrimary, blurRangePrimary);
+
+    if (document.getElementById("changeInnerPrimary").classList.contains("shapeClicked") == true) {
+        updateCode("codeBoxShadowPrimary", createBoxShadow("inset ", distanceRangePrimary.value, blurRangePrimary.value));
+    } else {
+        updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
+    }
+}
+
+// code
+function updateCode(codeStyle, codeValue) {
+    document.getElementById(codeStyle).innerHTML = codeValue;
+}
+
+// copy
+document.getElementById("copy").onclick = function() {
+    // var copyText = document.getElementById("copyText");
+    var copyText = document.getElementById("copyText").innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = copyText;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    alert("Copied!");
 }
