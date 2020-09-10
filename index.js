@@ -334,7 +334,7 @@ changeDropPrimary.onclick = function () {
     addStyle("changeDropPrimary");
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
-            createBoxShadow("", distanceRange.value, blurRange.value);
+            createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value);
     
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = "none";
 
@@ -346,7 +346,7 @@ changeInnerPrimary.onclick = function () {
     addStyle("changeInnerPrimary");
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
-            createBoxShadow("inset ", distanceRange.value, blurRange.value);
+            createBoxShadow("inset ", distanceRangePrimary.value, blurRangePrimary.value);
     
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = "none";
 
@@ -361,7 +361,7 @@ changeConvexPrimary.onclick = function () {
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = gradient;
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
-            createBoxShadow("", distanceRange.value, blurRange.value);
+            createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value);
 
     updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
     updateCode("codeBackgroundColorPrimary", "background-image: " + gradient);
@@ -374,7 +374,7 @@ changeConcavePrimary.onclick = function () {
     document.getElementsByClassName("myDIV")[0].style.backgroundImage = gradient;
 
     document.getElementsByClassName("myDIV")[0].style.boxShadow = 
-            createBoxShadow("", distanceRange.value, blurRange.value);
+            createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value);
 
     updateCode("codeBoxShadowPrimary", createBoxShadow("", distanceRangePrimary.value, blurRangePrimary.value));
     updateCode("codeBackgroundColorPrimary", "background-image: " + gradient);
