@@ -4,23 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Neumorphism/Soft UI CSS Generator</title>
-
+    
+    <link href="css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="bootstrap-grid.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" type="text/scss" href="index.scss">
+    
 </head>
 <body>
     <div class="container">
-    <div class="row">
+    <div class="row justify-content-md-cente">
 
-    <div class="col-7">
+    <div class="cols-sm-12 col-md-6">
         <div class="box">
             <div id="primary_button" class="myDIV"></div>
             <div id="background_button" class="myDIV"></div>
         </div>
         <div class="codeBox">
-            <button type="button" style="float: right;" id="copy">COPY</button>
+            <button type="button" style="position: relative; float: right;" id="copy">COPY</button>
             <code id="copyText">
                 .primary-button {<br/>
                     <span id="codeBackgroundColorPrimary">background-color: #ffeac2</span>;<br/>
@@ -46,96 +47,101 @@
     <!-- <div id="changeColor">
         <input type="color" id="favcolor" name="favcolor" value="#FFB11B">
     </div> -->
-    <div class="col-5">
-
-    <h3>General</h3>
+    <div class="col-sm-12 col-md-6">
+    
+    <div class="headBox"><h3>General</h3></div>
     <!-- size -->
-    <div id="changeSize">
-        <p>Size</p>
+    <div id="changeSize" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-expand-arrows-alt"></i></div>
         <div class="slidecontainer">
-            <input type="range" min="50" max="250" value="150" class="slider" id="sizeRange">
-            <span id="sizeNumber">0</span><span>px</span>
+            <input type="range" min="20" max="180" value="100" class="slider" id="sizeRange">
         </div>
-        
+        <div><p><span id="sizeNumber">0</span><span>px</span></p></div>
     </div>
+    
 
     <!-- border radius -->
-    <div id="changeBorderRadius">
-        <p>Border Radius</p>
+    <div id="changeBorderRadius" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-border-style"></i></div>
         <div class="slidecontainer">
             <input type="range" min="0" max="50" value="25" class="slider" id="borderRadiusRange">
-            <span id="borderRadiusNumber">0</span><span>%</span>
         </div>
+        <div><p><span id="borderRadiusNumber">0</span><span>%</span></p></div>
     </div>
 
     <!-- primary -->
-    <h3>Primary Button</h3>
-    <div>
-        <p>Primary Color</p>
+    <div class="headBox"><h3>Primary Button</h3></div>
+    <div style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-palette"></i></div>
         <!-- <span class="container" id="primary_val" style="line-height: 30px;">#ffeac2</span> -->
         <input type="color" id="primary_color" class="field-radio" value="#ffeac2">
     </div>
 
-    <!-- shadow -->
-    <p>Shape</p>
-    <span>
-        <button type="button" id="changeDropPrimary" class="shapeClicked">Dropshadow</button>
-        <button type="button" id="changeInnerPrimary">Inner-shadow</button>
-        <button type="button" id="changeConvexPrimary">Convex</button>
-        <button type="button" id="changeConcavePrimary">Concave</button>
-    </span>
+    <!-- shape / box-shadow -->
+    <div style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-shapes"></i></div>
+        <p>
+            <button type="button" id="changeDropPrimary" class="shapeClicked">Dropshadow</button>
+            <button type="button" id="changeInnerPrimary">Inner-shadow</button>
+            <button type="button" id="changeConvexPrimary">Convex</button>
+            <button type="button" id="changeConcavePrimary">Concave</button>
+        </p>
+    </div>
+    
     
     <!-- distance -->
-    <div id="changeDistance">
-        <p>Distance</p>
+    <div id="changeDistance" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-arrows-alt-v"></i></div>
         <div class="slidecontainer">
             <input type="range" min="0" max="50" value="25" class="slider" id="distanceRangePrimary">
-            <span id="distanceNumberPrimary">0</span><span>px</span>
         </div>
+        <div><span id="distanceNumberPrimary">0</span><span>px</span></div>
     </div>
 
     <!-- blur -->
-    <div id="changeBlur">
-        <p>Blur</p>
+    <div id="changeBlur" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-tint"></i></div>
         <div class="slidecontainer">
             <input type="range" min="0" max="100" value="50" class="slider" id="blurRangePrimary">
-            <span id="blurNumberPrimary">0</span><span>px</span>
         </div>
+        <div><span id="blurNumberPrimary">0</span><span>px</span></div>
     </div>
 
     <!-- background -->
-    <h3>Background Button</h3>
-    <div>
-        <p>Background Color</p>
+    <div class="headBox"><h3>Background Button</h3></div>
+    <div style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-palette"></i></div>
         <!-- <span class="container" id="background_val" style="line-height: 30px;">#d2aa60</span> -->
-        <input type="color" id="background_color" class="field-radio" value="#b69c6d">
+        <div><input type="color" id="background_color" class="field-radio" value="#b69c6d"></div>
     </div>
 
-    <!-- shadow -->
-    <p>Shape</p>
-    <span>
-        <button type="button" id="changeDrop" class="shapeClicked">Dropshadow</button>
-        <button type="button" id="changeInner">Inner-shadow</button>
-        <button type="button" id="changeConvex">Convex</button>
-        <button type="button" id="changeConcave">Concave</button>
-    </span>
+    <!-- shape / box shadow -->
+    <div style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-shapes"></i></div>
+        <p>
+            <button type="button" id="changeDrop" class="shapeClicked">Dropshadow</button>
+            <button type="button" id="changeInner">Inner-shadow</button>
+            <button type="button" id="changeConvex">Convex</button>
+            <button type="button" id="changeConcave">Concave</button>
+        </p>
+    </div>
     
     <!-- distance -->
-    <div id="changeDistance">
-        <p>Distance</p>
+    <div id="changeDistance" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-arrows-alt-v"></i></div>
         <div class="slidecontainer">
             <input type="range" min="0" max="50" value="25" class="slider" id="distanceRange">
-            <span id="distanceNumber">0</span><span>px</span>
         </div>
+        <div><span id="distanceNumber">0</span><span>px</span></div>
     </div>
 
     <!-- blur -->
-    <div id="changeBlur">
-        <p>Blur</p>
+    <div id="changeBlur" style="display: flex; flex-wrap: nowrap;">
+        <div><i class="fas fa-tint"></i></div>
         <div class="slidecontainer">
             <input type="range" min="0" max="100" value="50" class="slider" id="blurRange">
-            <span id="blurNumber">0</span><span>px</span>
         </div>
+        <div><span id="blurNumber">0</span><span>px</span></div>
     </div>
     
     </div>
