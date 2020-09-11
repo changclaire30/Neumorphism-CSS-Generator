@@ -1,8 +1,13 @@
  @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
-*, i, p, span, h3, code {
+*, i, p, span, h1, h3, code {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.5rem;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 40px;
 }
 
 h3 {
@@ -21,10 +26,10 @@ body {
 .box {
   /* padding: 50px; */
   position: relative;
-  left: 0:
+  left: 0;
   top: 0;
   width: 100%;
-  height: 65%;
+  height: 60%;
 }
 
 .headBox {
@@ -60,9 +65,9 @@ body {
     box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3), -25px -25px 50px rgba(255, 255, 255, 0.3);
     margin: 10px;
     position: relative;
-    top: 25%;
-    -ms-transform: translateY(-25%);
-    transform: translateY(-25%);
+    top: 20%;
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
     /* left: 25%;
     -ms-transform: translateX(-25%);
     transform: translateX(-25%); */
@@ -81,9 +86,9 @@ body {
     height: 20vh;
   }
   #primary_button, #background_button {
-    top: 10%;
-    -ms-transform: translateY(-10%);
-    transform: translateY(-10%);    
+    top: 5%;
+    -ms-transform: translateY(-5%);
+    transform: translateY(-5%);    
   }
 }
 
