@@ -137,7 +137,7 @@ body {
   padding: 0;
 }
 
-#primary_color:hover, #background_color:hover{
+#primary_color:hover, #background_color:hover, #changeDrop:hover, #changeInner:hover, #changeConvex:hover, #changeConcave:hover, #changeDropPrimary:hover, #changeInnerPrimary:hover, #changeConvexPrimary:hover, #changeConcavePrimary:hover {
   cursor: pointer;
   box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.3);
 }
