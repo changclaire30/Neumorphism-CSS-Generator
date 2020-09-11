@@ -12,7 +12,6 @@ h1 {
 
 h3 {
   font-size: 20px;
-  /* line-height: 2rem; */
 }
 
 div {
@@ -133,7 +132,7 @@ body {
   height: 30px;
   width: 60px;
   border: 1px solid white;
-  outline: none;1
+  outline: none;
   -webkit-appearance: none;
   padding: 0;
 }
@@ -161,8 +160,8 @@ body {
   height: auto;
   width: auto;
   border: 1px solid white;
-  outline: none;1
+  outline: none;
   -webkit-appearance: none;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-  margin: 0.2rem
+  margin: 0.2rem;
 }
